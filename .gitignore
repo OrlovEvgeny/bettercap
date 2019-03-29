@@ -10,5 +10,6 @@ bettercap.history
 prime/
 snap/
 stage/
-
+.idea
+.idea/*
 /snap

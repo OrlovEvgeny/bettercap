@@ -65,10 +65,9 @@ func (p *HTTPProxy) fixResponseHeaders(res *http.Response) {
 	res.Header.Del("X-Download-Options")
 	res.Header.Del("X-Permitted-Cross-Domain-Policies")
 	res.Header.Del("X-Xss-Protection")
-	res.Header.Set("Allow-Access-From-Same-Origin", "*")
+	//res.Header.Set("Allow-Access-From-Same-Origin", "*")
 	res.Header.Set("Access-Control-Allow-Origin", "*")
-	res.Header.Set("Access-Control-Allow-Methods", "*")
-	res.Header.Set("Access-Control-Allow-Headers", "*")
+	res.Header.Set("Cache-Control", "max-age=3600")
 }
 
 func (p *HTTPProxy) getHeader(res *http.Response, header string) string {
